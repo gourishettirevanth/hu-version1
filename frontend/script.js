@@ -50,6 +50,7 @@ function updateTables(data) {
   fillTable("cpuUtilizationTable", data.cpuUtilization, ["timestamp", "pid", "comm", "cpu_time"]);
   fillTable("cpuAlarmsTable", data.cpuAlarms, ["pid", "comm", "cpu", "threshold", "triggeredAt"]);
   fillTable("networkPacketsTable", data.networkPackets, ["timestamp","pid","comm","event_type","saddr","daddr","dport","protocol"]);
+  fillTable("privilegedEvents", data.privilegedEvents, ["time","pid", "uid","comm","syscall","filename","args","insight"]); 
   fillTable("userActivityTable", data.userActivity || [], ["timestamp","pid", "uid","comm","args","suspicious"]); 
 }
 

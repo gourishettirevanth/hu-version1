@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ alert_type }} Alert</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 32px 36px 24px 36px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(26, 42, 73, 0.08);
+            border: 1px solid #e3e8ee;
+            border-left: 6px solid #86bc25;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .logo-text {
+            font-size: 2.2em;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #1a2a49;
+        }
+        .logo-text .accent {
+            color: #86bc25;
+            font-weight: 700;
+        }
+        .header {
+            background-color: #1a2a49;
+            color: #fff;
+            padding: 20px 0 16px 0;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            margin: -32px -36px 28px -36px;
+        }
+        h2 {
+            margin: 0;
+            font-size: 1.6em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 12px 0;
+        }
+        li {
+            margin-bottom: 14px;
+            font-size: 1.08em;
+        }
+        strong {
+            color: #86bc25;
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 32px;
+            font-size: 0.96em;
+            color: #6c757d;
+            text-align: center;
+        }
+        .greeting {
+            margin-bottom: 18px;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <span class="logo-text">Kernel<span class="accent">Lens</span></span>
+        </div>
+        <div class="header">
+            <h2>{{ alert_type }} Detected</h2>
+        </div>
+        <div class="greeting">
+            Dear Team,<br>
+            {{ message }}
+        </div>
+        <ul>
+            
+        </ul>
+        <div class="footer">
+            This is an automated alert from your monitoring system.
+        </div>
+    </div>
+</body>
+</html>

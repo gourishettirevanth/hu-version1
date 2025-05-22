@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Kernel Monitor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li onclick="showSection('cpuUtilization')">
+        <i class="fas fa-microchip"></i> CPU Utilization
+      </li>
+      <li onclick="showSection('cpuAlarms')">
+        <i class="fas fa-exclamation-triangle"></i> Alarms on Threshold CPU
+      </li>
+      <li onclick="showSection('userActivity')">
+        <i class="fas fa-user"></i> User Activity
+      </li>
+      <li onclick="showSection('processManipulation')">
+        <i class="fas fa-tasks"></i> Process Manipulation
+      </li>
+      <li onclick="showSection('networkPackets')">
+        <i class="fas fa-network-wired"></i> Network Packet Transfer
+      </li>
+    </ul>
+  </div>
+  <div class="main-content" id="mainContent">
+    <div id="cpuUtilization" class="table-section active">
+      <h2>CPU Utilization</h2>
+      <canvas id="cpuUtilizationChart" height="100"></canvas>
+      <table id="cpuUtilizationTable">
+        <thead>
+          <tr>
+	    <th>Timestamp</th>
+            <th>Process ID</th>
+            <th>Process Name</th>
+            <th>CPU Time</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="cpuAlarms" class="table-section">
+      <h2>Alarms on Threshold CPU</h2>
+      <canvas id="cpuAlarmsChart" height="100"></canvas>
+      <table id="cpuAlarmsTable">
+        <thead>
+          <tr>
+            <th>Process ID</th>
+            <th>Process Name</th>
+            <th>CPU %</th>
+            <th>Threshold</th>
+            <th>Triggered At</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="userActivity" class="table-section">
+      <h2>User Activity</h2>
+      <canvas id="userActivityChart" height="100"></canvas>
+      <table id="userActivityTable">
+        <thead>
+          <tr>
+        <th>Timestamp</th>
+        <th>PID</th>
+        <th>UID</th>
+        <th>Command</th>
+        <th>Args</th>
+        <th>suspicious</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="processManipulation" class="table-section">
+      <h2>Process Manipulation</h2>
+      <canvas id="processManipulationChart" height="100"></canvas>
+      <table id="processManipulationTable">
+        <thead>
+          <tr>
+            <th>User Action</th>
+            <th>Target Process</th>
+            <th>Status</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="networkPackets" class="table-section">
+      <h2>Network Packet Transfer</h2>
+     
+      <table id="networkPacketsTable">
+        <thead>
+          <tr>
+            <th>timestamp</th>
+            <th>pid</th>
+            <th>comm</th>
+            <th>event_type</th>
+	    <th>saddr</th>
+	    <th>daddr</th>
+	    <th>dport</th>
+	    <th>protocol</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
